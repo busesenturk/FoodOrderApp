@@ -11,7 +11,6 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
     private var foodList = [AllFoodModel]()
-    private var selectedIndex: Int = 0
     var homePresenterObject: ViewToPresenterHomeProtocol?
     
     override func viewDidLoad() {
@@ -24,6 +23,14 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         homePresenterObject?.downloadFood()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailPage" {
+            let food = sender as? AllFoodModel
+            let destinationVC = segue.destination as? DetailViewController
+            destinationVC!.food = food
+        }
     }
 }
 
@@ -56,6 +63,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.selectedIndex = indexPath.item
+        let food = foodList[indexPath.row]
+        performSegue(withIdentifier: "toDetailPage", sender: food)
     }
 }
