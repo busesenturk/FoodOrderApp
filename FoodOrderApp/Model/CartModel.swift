@@ -1,5 +1,5 @@
 //
-//  CardModel.swift
+//  CartModel.swift
 //  FoodOrderApp
 //
 //  Created by Buse Şentürk on 22.05.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CardModel: Codable {
+class CartModel: Codable {
     var sepet_yemek_id:String?
     var yemek_adi:String?
     var yemek_resim_adi:String?
