@@ -46,10 +46,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCollectionViewCell
         let food = foodList[indexPath.row]
         cell.foodNameLabel.text = food.yemek_adi
-        cell.foodPriceLabel.text = food.yemek_fiyat
+        cell.foodPriceLabel.text = "\(food.yemek_fiyat!)₺"
         cell.foodImageView.image = UIImage(named: food.yemek_resim_adi!)
+        cell.showImage(imageName: "\(food.yemek_resim_adi!)")
         cell.layer.borderColor = UIColor.lightGray.cgColor
-        cell.layer.borderWidth = 3.0
+        cell.layer.borderWidth = 0.5
         cell.layer.cornerRadius = 20.0
         return cell
     }
