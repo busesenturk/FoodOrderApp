@@ -28,8 +28,4 @@ class HomeInteractor: PresenterToInteractorHomeProtocol {
             }
         }
     }
-    
-    func findFood(searchWord: String) {
-        print("Arama sonucu: \(searchWord)")
-    }
 }

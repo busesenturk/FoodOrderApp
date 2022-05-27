@@ -8,5 +8,5 @@
 import Foundation
 
 class CartAnswer: Codable {
-    var yemekler: [CartModel]?
+    var sepet_yemekler: [CartModel]?
 }

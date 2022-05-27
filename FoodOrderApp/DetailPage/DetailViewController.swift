@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DetailViewController: UIViewController {
     
@@ -25,6 +26,7 @@ class DetailViewController: UIViewController {
         detailFoodPrice.text = "\(food!.yemek_fiyat ?? "0")₺"
         detailImageView.image = UIImage(named: (food?.yemek_resim_adi)!)
         showImage(imageName: "\(food!.yemek_resim_adi!)")
+        DetailRouter.createModule(ref: self)
     }
     
     func showImage(imageName:String) {
@@ -61,7 +63,7 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func addToCartButtonClicked(_ sender: Any) {
-    
+        detailPagePresenterObject?.totalCount(yemek_adi: (food?.yemek_adi)!, yemek_resim_adi: (food?.yemek_resim_adi)!, yemek_fiyat: (food?.yemek_fiyat!)!, yemek_siparis_adet: Int(foodTotalCount.text!)!, kullanici_adi: "\(Auth.auth().currentUser?.email ?? "")")
     }
 }
 

@@ -15,10 +15,6 @@ class HomePresenter: ViewToPresenterHomeProtocol {
     func downloadFood() {
         homeInteractor?.getAllFood()
     }
-    
-    func find(searchWord: String) {
-        homeInteractor?.findFood(searchWord: searchWord)
-    }
 }
 
 extension HomePresenter: InteractorToPresenterHomeProtocol {

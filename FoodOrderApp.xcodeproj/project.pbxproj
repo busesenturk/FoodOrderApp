@@ -185,8 +185,8 @@
 			children = (
 				A5DB0569283AD127004C9F47 /* Model */,
 				A5DB055C283AAFCD004C9F47 /* UIViewController - Extension */,
-				A5DB0551283AA244004C9F47 /* DetailPage */,
 				A590B89B283A6EE700622694 /* HomePage */,
+				A5DB0551283AA244004C9F47 /* DetailPage */,
 				A5DB055F283AC3D2004C9F47 /* CartPage */,
 				A511F23F2838E36B005A5B37 /* AppDelegate.swift */,
 				A511F2412838E36B005A5B37 /* SceneDelegate.swift */,
@@ -255,11 +255,11 @@
 			isa = PBXGroup;
 			children = (
 				A5DB0560283AC3FA004C9F47 /* CartViewController.swift */,
+				A544E6A8283ADDD200A41D38 /* CartTableViewCell.swift */,
 				A544E6A0283ADD5900A41D38 /* CartPresenter.swift */,
 				A544E6A2283ADD6C00A41D38 /* CartInteractor.swift */,
 				A544E6A4283ADD7A00A41D38 /* CartProtocols.swift */,
 				A544E6A6283ADD8A00A41D38 /* CartRouter.swift */,
-				A544E6A8283ADDD200A41D38 /* CartTableViewCell.swift */,
 			);
 			path = CartPage;
 			sourceTree = "<group>";

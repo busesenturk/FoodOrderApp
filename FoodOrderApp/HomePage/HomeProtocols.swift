@@ -11,17 +11,13 @@ protocol ViewToPresenterHomeProtocol {
     var homeInteractor:PresenterToInteractorHomeProtocol? { get set }
     var homeView:PresenterToViewHomeProtocol? { get set }
     
-    func downloadFood()
-    func find(searchWord:String)
-    
+    func downloadFood()    
 }
 
 protocol PresenterToInteractorHomeProtocol {
     var homePresenter:InteractorToPresenterHomeProtocol? { get set }
     
-    func getAllFood()
-    func findFood(searchWord:String)
-    
+    func getAllFood()    
 }
 
 protocol InteractorToPresenterHomeProtocol {
