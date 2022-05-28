@@ -27,10 +27,10 @@ class CartViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         cartPresenterObject?.getFood(kullanici_adi:"\(Auth.auth().currentUser?.email ?? "")")
-        getTotal()
+        getTotalPrice()
     }
     
-    func getTotal() {
+    func getTotalPrice() {
         var total = 0
         for food in foodList {
             total += Int(food.yemek_siparis_adet!)! * Int(food.yemek_fiyat!)!
@@ -44,7 +44,7 @@ extension CartViewController: PresenterToViewCartPageProtocol {
         self.foodList = cartFoodList
         DispatchQueue.main.async {
             self.cartTableView.reloadData()
-            self.getTotal()
+            self.getTotalPrice()
         }
     }
 }
@@ -65,4 +65,19 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let daleteAction = UIContextualAction(style: .destructive, title: "Sil"){ (contextualAction,view,bool) in
+            let food = self.foodList[indexPath.row]
+            let alert = UIAlertController(title: "\(food.yemek_adi!) silinsin mi?", message: "", preferredStyle: .alert)
+            let acceptAction = UIAlertAction(title: "Evet", style: .destructive) { action in  self.cartPresenterObject?.delete(sepet_yemek_id: food.sepet_yemek_id!, kullanici_adi: food.kullanici_adi!) }
+            alert.addAction(acceptAction)
+            let cancelAction = UIAlertAction(title: "Hayır", style: .cancel) { action in }
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true)
+        }
+        return UISwipeActionsConfiguration(actions: [daleteAction])
+    }
+    
 }

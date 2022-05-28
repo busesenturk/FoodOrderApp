@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
+        homeCollectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
         homeCollectionView.collectionViewLayout = ColumnFlowLayout(numberOfColumns: 3, minColumnSpacing: 10, minLineSpacing: 10)
         HomeRouter.createModule(ref: self)
     }
@@ -31,6 +33,23 @@ class HomeViewController: UIViewController {
             let destinationVC = segue.destination as? DetailViewController
             destinationVC!.food = food
         }
+    }
+    
+    @IBAction func logoutButton(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            goToLoginPage()
+        } catch {
+            print("error")
+        }
+    }
+}
+
+//MARK: - Navigation
+extension HomeViewController {
+    func goToLoginPage() {
+        guard let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as? ViewController else { return }
+        navigationController?.pushViewController(loginVC, animated: true)
     }
 }
 

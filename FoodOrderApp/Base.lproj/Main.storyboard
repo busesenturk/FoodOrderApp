@@ -90,6 +90,9 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" id="XzE-TM-znS">
                                 <imageReference key="image" image="arrow.up.and.person.rectangle.portrait" catalog="system" symbolScale="large"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="BYZ-38-t0r" id="KPI-9a-VPb"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem style="plain" id="YNk-Wb-cgq">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ILh-RT-D00">
@@ -364,11 +367,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHL-LE-Ld6">
-                                        <rect key="frame" x="10" y="345" width="394" height="275"/>
+                                        <rect key="frame" x="10" y="385" width="394" height="261"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yemek siparişi vermek için giriş yapmalısın 👀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTZ-ig-yAn">
-                                                <rect key="frame" x="32" y="42" width="317.5" height="17"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <rect key="frame" x="32" y="41" width="336.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -410,7 +413,7 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <state key="normal" title="Göster" image="eye">
-                                                                    <color key="titleColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <state key="selected" title="Gizle" image="eye-passive"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -493,13 +496,22 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="꧁༺ 𝓕𝓸𝓸𝓭 𝓞𝓻𝓭𝓮𝓻 ༻꧂" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgm-PA-eco">
+                                        <rect key="frame" x="20" y="333.5" width="374" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="26"/>
+                                        <color key="textColor" red="0.15704006618923616" green="0.1057904542263796" blue="0.037726695049358293" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.1362766493" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="BHL-LE-Ld6" secondAttribute="bottom" constant="276" id="4qt-c0-vCY"/>
+                                    <constraint firstAttribute="bottom" secondItem="BHL-LE-Ld6" secondAttribute="bottom" constant="250" id="4qt-c0-vCY"/>
+                                    <constraint firstItem="wgm-PA-eco" firstAttribute="leading" secondItem="Cqa-fi-enX" secondAttribute="leading" constant="20" id="BEZ-ls-zat"/>
+                                    <constraint firstAttribute="trailing" secondItem="wgm-PA-eco" secondAttribute="trailing" constant="20" id="BP2-m7-20j"/>
                                     <constraint firstItem="BHL-LE-Ld6" firstAttribute="centerX" secondItem="Cqa-fi-enX" secondAttribute="centerX" id="KPW-AM-Pfo"/>
+                                    <constraint firstItem="BHL-LE-Ld6" firstAttribute="top" secondItem="wgm-PA-eco" secondAttribute="bottom" constant="20" id="Y3O-1J-GDT"/>
                                     <constraint firstAttribute="trailing" secondItem="BHL-LE-Ld6" secondAttribute="trailing" constant="10" id="YC8-UG-dbI"/>
-                                    <constraint firstItem="BHL-LE-Ld6" firstAttribute="top" secondItem="Cqa-fi-enX" secondAttribute="top" constant="345" id="gpp-O5-rng"/>
+                                    <constraint firstItem="BHL-LE-Ld6" firstAttribute="top" secondItem="Cqa-fi-enX" secondAttribute="top" constant="385" id="gpp-O5-rng"/>
                                     <constraint firstItem="BHL-LE-Ld6" firstAttribute="leading" secondItem="Cqa-fi-enX" secondAttribute="leading" constant="10" id="nFN-XI-n4Y"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
